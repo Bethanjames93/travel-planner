@@ -1,7 +1,7 @@
 {
   "name": "travel-planner",
   "version": "1.0.0",
-  "description": "An application for planning your travel.",
+  "description": "An application for planning your future travel.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
