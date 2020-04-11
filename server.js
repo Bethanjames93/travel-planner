@@ -2,11 +2,13 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const tripRouter = require("./routes/trip");
+const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 require("dotenv").config();
 const uri = process.env.ATLAS_URI;
+app.use(bodyParser.json());
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;
