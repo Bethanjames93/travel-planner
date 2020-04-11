@@ -1,10 +1,23 @@
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose");
+const tripRouter = require("./routes/trip");
+
 const PORT = process.env.PORT || 3001;
 const app = express();
+require("dotenv").config();
+const uri = process.env.ATLAS_URI;
+
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+});
 
 // Serve up static assets (usually on heroku)
 app.use(express.static("client/build"));
+
+app.use("/trip", tripRouter);
 
 // Send every request to the React app
 // Define any API routes before this runs
