@@ -10,7 +10,7 @@ const Trip = props => (
         <td>{props.trip.photospot}</td>
         <td>{props.trip.cafe}</td>
         <td>
-            <Link to={"/edit/"+props.trip._id}>edit</Link> | <a href="#" onClick={() => { props.deleteTrip(props.trip._id) }}>delete</a>
+            <Link to={"/edit/"+props.trip._id}>edit</Link> | <a href="https://my-travelplanner.herokuapp.com/trip/delete/" onClick={() => { props.deleteTrip(props.trip._id) }}>delete</a>
         </td>
     </tr>
 )
@@ -19,7 +19,7 @@ export default class Triplist extends Component {
     constructor(props) {
         super(props);
 
-        this.deleteTrip = this.deleteTrip.bind(this);
+        this.deleteTrip = this.deleteTrip.bind(this)
 
         this.state = {trip: []};
     }
@@ -36,7 +36,7 @@ export default class Triplist extends Component {
 
     deletTrip(id) {
         axios.delete('https://my-travelplanner.herokuapp.com/trip/'+id)
-        .then(res => console.log(res.data));
+        .then(response => { console.log(response.data)});
 
         this.setState({
             trip: this.state.trip.filter(el => el._id !== id)
