@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const tripRouter = require("./routes/trip");
+const tripRouter = require("./routes/api/trip");
 const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3001;
@@ -17,9 +17,11 @@ connection.once("open", () => {
 });
 
 // Serve up static assets (usually on heroku)
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-app.use("/trip", tripRouter);
+app.use(routes);
 
 // Send every request to the React app
 // Define any API routes before this runs

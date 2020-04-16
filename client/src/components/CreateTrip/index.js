@@ -71,7 +71,7 @@ export default class CreateTrip extends Component {
     console.log(trip);
 
     axios
-      .post("https://my-travelplanner.herokuapp.com/trip/add", trip)
+      .post("/trip/add", trip)
       .then((res) => console.log(res.body));
 
     // window.location = '/mytrips'
