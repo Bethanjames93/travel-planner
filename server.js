@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const tripRouter = require("./routes/api/trip");
+const tripRouter = require("./routes/api");
 const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3001;
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
+app.use("/api", tripRouter);
 
 // Send every request to the React app
 // Define any API routes before this runs

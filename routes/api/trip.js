@@ -1,13 +1,13 @@
 const router = require('express').Router();
-let Trip = require('../../models/trip.model');
+let Trip = require('../../models');
 const tripController = require("../../controllers/tripController");
 
 router.route("/")
     .get(tripController.findAll);
 
-router
-    .route("/:id")
-    .get(tripController.findById);
+// router
+//     .route("/:id")
+//     .get(tripController.findById);
 
 router.route('/add').post((req, res) => {
     const location = req.body.location;

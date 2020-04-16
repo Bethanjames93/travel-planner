@@ -8,10 +8,10 @@ const tripSchema = new Schema({
     viewpoint: {type: String},
     photospot: {type: String},
     cafe: {type: String},
-}, {
-    timestamps: true,
 });
 
 const Trip = mongoose.model('Trip', tripSchema);
 
-module.exports = Trip;
+
+
+module.exports = {Trip};
