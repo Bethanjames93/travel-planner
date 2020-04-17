@@ -26,7 +26,7 @@ export default class Triplist extends Component {
         axios.get('/api/trips/')
         .then(response => {
             console.log(response.body)
-            this.setState({ trips: response.body })
+            this.setState({ trips: response.data })
         })
         .catch((error) => {
             console.log(error);
@@ -54,9 +54,7 @@ export default class Triplist extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* { this.state.trips.map(currenttrip => {
-            return <Trip trip={currenttrip} key={currenttrip._id}/>;
-        })} */}
+                        { this.triplist() }
                     </tbody>
                 </table>
             </div>
