@@ -19,13 +19,14 @@ export default class Triplist extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {trip: []};
+        this.state = {trips: []};
     }
 
     componentDidMount() { 
-        axios.get('https://my-travelplanner.herokuapp.com/trip/')
+        axios.get('/api/trips/')
         .then(response => {
-            this.setState({ trip: response.body })
+            console.log(response.body)
+            this.setState({ trips: response.body })
         })
         .catch((error) => {
             console.log(error);
@@ -34,7 +35,7 @@ export default class Triplist extends Component {
 
 
     triplist() {
-        return this.state.trip.map(currenttrip => {
+        return this.state.trips.map(currenttrip => {
             return <Trip trip={currenttrip} key={currenttrip._id}/>;
         })
     }
@@ -53,7 +54,9 @@ export default class Triplist extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.triplist() }
+                        {/* { this.state.trips.map(currenttrip => {
+            return <Trip trip={currenttrip} key={currenttrip._id}/>;
+        })} */}
                     </tbody>
                 </table>
             </div>
