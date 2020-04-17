@@ -3,31 +3,39 @@ let Trip = require('../../models');
 const tripController = require("../../controllers/tripController");
 
 router.route("/")
-    .get(tripController.findAll);
+    .get(tripController.findAll)
+    .post(tripController.create);
+
+router
+    .route("/:id")
+    .get(tripController.findById)
+    .put(tripController.update)
+    .delete(tripController.remove);
+
 
 // router
 //     .route("/:id")
 //     .get(tripController.findById);
 
-router.route('/add').post((req, res) => {
-    const location = req.body.location;
-    const landmark = req.body.landmark;
-    const viewpoint = req.body.viewpoint;
-    const photospot = req.body.photospot;
-    const cafe = req.body.cafe;
+// router.route('/add').post((req, res) => {
+//     const location = req.body.location;
+//     const landmark = req.body.landmark;
+//     const viewpoint = req.body.viewpoint;
+//     const photospot = req.body.photospot;
+//     const cafe = req.body.cafe;
 
-    const newTrip = new Trip({
-        location,
-        landmark,
-        viewpoint,
-        photospot,
-        cafe,
-    });
+//     const newTrip = new Trip({
+//         location,
+//         landmark,
+//         viewpoint,
+//         photospot,
+//         cafe,
+//     });
 
-    newTrip.save()
-    .then(() => res.json('New Trip Added!'))
-    .catch(err => res.status(400).json("Error: " + err));
-});
+//     newTrip.save()
+//     .then(() => res.json('New Trip Added!'))
+//     .catch(err => res.status(400).json("Error: " + err));
+// });
 
 // router.route('/:id').get((req, res) => {
 //     Trip.findById(req.params.id)
