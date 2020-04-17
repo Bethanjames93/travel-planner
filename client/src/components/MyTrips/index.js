@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Trip = props => (
@@ -9,9 +9,9 @@ const Trip = props => (
         <td>{props.trip.viewpoint}</td>
         <td>{props.trip.photospot}</td>
         <td>{props.trip.cafe}</td>
-        {/* <td>
+        <td>
             <Link to={"/edit/"+props.trip._id}>edit</Link> | <a href="https://my-travelplanner.herokuapp.com/trip/delete/" onClick={() => { props.deleteTrip(props.trip._id) }}>delete</a>
-        </td> */}
+        </td>
     </tr>
 )
 
