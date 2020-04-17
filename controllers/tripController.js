@@ -15,7 +15,7 @@ module.exports = {
     },
 
     update: function(req, res) {
-        db.Trip.findOneAndUpdate({ _is: req.params.id }, req.body).then(dbTrip => res.json(dbTrip)).catch(err => res.status(422).json(err));
+        db.Trip.findOneAndUpdate({ _id: req.params.id }, req.body).then(dbTrip => res.json(dbTrip)).catch(err => res.status(422).json(err));
     },
 
     remove: function(req, res) {
