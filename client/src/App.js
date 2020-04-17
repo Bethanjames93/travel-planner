@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import CreateTrip from "./components/CreateTrip";
 import MyTrips from "./components/MyTrips";
-// import EditTrip from "./components/EditTrip";
+import EditTrip from "./components/EditTrip";
 import Login from "./components/Login";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/create" component={CreateTrip} />
         <Route path="/mytrips" component={MyTrips} />
-        {/* <Route path="/edit/:id" component={EditTrip} /> */}
-        <Route path="/login" component={Login} />
+        <Route path="/edit/:id" component={EditTrip} />
+        <Route path="/signin" component={Login} />
       </div>
     </Router>
   );
