@@ -71,7 +71,7 @@ export default class CreateTrip extends Component {
     console.log(trip);
 
     axios
-      .post("/trip/add", trip)
+      .post("api/trip/", trip)
       .then((res) => console.log(res.body));
 
     // window.location = '/mytrips'
