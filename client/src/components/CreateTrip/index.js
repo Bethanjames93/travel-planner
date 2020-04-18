@@ -136,7 +136,7 @@ export default class CreateTrip extends Component {
             <input
               type="submit"
               value="Create Trip Plan"
-              className="btn btn-primary"
+              className="btn btn-outline-dark"
             />
           </div>
         </form>
