@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/create" component={CreateTrip} />
         <Route path="/mytrips" component={MyTrips} />
         {/* <Route path="/edit/:id" component={EditTrip} /> */}
-        <Route path="/signin" component={Login} />
+        <Route path="/login" component={Login} />
       </div>
     </Router>
   );

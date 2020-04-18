@@ -74,7 +74,7 @@ export default class CreateTrip extends Component {
       .post("api/trip/", trip)
       .then((res) => console.log(res.body));
 
-    // window.location = '/mytrips'
+    window.location = '/api/trips/mytrips'
   }
   render() {
     return (

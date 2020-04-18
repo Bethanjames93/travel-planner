@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
     render() {
         return(
-            <nav className="navbar navbar-light bg-light navbar-expand-lg">
-                <Link to="/" className="navbar-brand">Travel Planner</Link>
-                <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="navbar-item">
-                        <Link to="/" className="nav-link">Home</Link>
-                        </li>
-                        <li className="navbar-item">
-                        <Link to="/create" className="nav-link">Create Trip</Link>
-                        </li>
-                        <li className="navbar-item">
-                        <Link to="/mytrips" className="nav-link">My Trips</Link>
-                        </li>
-                        <li className="navbar-item">
-                        <Link to="/login" className="nav-link">Login</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <div style={{height: '550px', position: 'relative'}}>
+                <Layout style={{background: 'url(https://images.unsplash.com/photo-1587172653333-4d85727afdc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80) center / cover'}}>
+                     <Header transparent title="Trip Planner" style={{color: 'grey'}}>
+                        <Navigation>
+                            <a href="/">Home</a>
+                            <a href="/create">Create Trip</a>
+                            <a href="/mytrips">My Trips</a>
+                            <a href="/login">Login</a>
+                        </Navigation>
+                    </Header>
+                    <Drawer title="Trip Planner">
+                        <Navigation>
+                            <a href="/">Home</a>
+                            <a href="/create">Create Trip</a>
+                            <a href="/mytrips">My Trips</a>
+                            <a href="/login">Login</a>
+                        </Navigation>
+                    </Drawer>
+                    <Content />
+                </Layout>
+            </div>
+          
         )
     }
 }
 
+export default Navbar;
