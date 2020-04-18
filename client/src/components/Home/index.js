@@ -8,6 +8,8 @@ export default class Home extends Component {
               <hr />
               <h3>Welcome to Travel Planner</h3>
               <p>Planning your trips just became alot easer with travel planner. Keep track of the landmarks, viewpoints, the all important instagram spots and cafes you would like to visit while you explore a new location.</p>
+              <br></br>
+              <p>Login to create your first trip.</p>
             </div>
         )
     }
